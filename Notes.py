@@ -65,10 +65,24 @@ def search_notes(notes):
                 
                 
 def delete_notes(notes):
-    if not notes 
+    if not notes:
+        print("No notes available")
+        return
     view_notes(notes)
-    
-    for note in enumerate(notes, start=1):
+    try:
+        index = int(input("Enter the note number you want to delete: "))
+        if 1 <= index <= len(notes):
+            confirm = input(f"Are you sure you want to delete Note {index}? (Y)es or (N)o: ").lower()
+            if confirm == "y":
+                deleted = notes.pop(index - 1)
+                save_notes(notes)
+                print(f"Deleted nots titled: {deleted['title']}")
+            elif confirm == "n": 
+                print("Note was not deleted")
+            else:
+                print("Invalid note number")
+    except ValueError:
+        print("Please enter a valid number.")
                 
        
         
@@ -90,5 +104,7 @@ while True:
     elif option == 3:
         search_notes(notes)
     elif option == 4:
+        delete_notes(notes)
+    elif option == 5:
         
         
