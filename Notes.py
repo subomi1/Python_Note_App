@@ -55,6 +55,21 @@ def search_notes(notes):
             
         if not found_notes:
             print("No matching notes found")
+        else:
+            print(f"\nFound {len(found_notes)} matching notes: ")
+            for index, note in enumerate(found_notes, start=1):
+                print(f"\nNote {index}")
+                print(f"Title: {note['title']}")
+                print(f"Content: {note['content']}")
+                print(f"Category: {note['category']}")
+                
+                
+def delete_notes(notes):
+    if not notes 
+    view_notes(notes)
+    
+    for note in enumerate(notes, start=1):
+                
        
         
 notes = load_notes()
@@ -73,5 +88,7 @@ while True:
     elif option == 2:
       view_notes(notes)
     elif option == 3:
-          
+        search_notes(notes)
+    elif option == 4:
+        
         
