@@ -106,5 +106,8 @@ while True:
     elif option == 4:
         delete_notes(notes)
     elif option == 5:
-        
+        print("Goodbye")
+        break
+else:
+    print("Invalid option. Try again.")
         
